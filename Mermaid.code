@@ -1,0 +1,43 @@
+erDiagram
+    estudiantes|| -- |{progresos:tiene
+    temas|| -- |{progresos:tiene
+    temas|| -- |{preguntas:tiene
+
+
+
+
+    estudiantes{
+        INTEGER id PK
+        TEXT user 
+        TEXT name 
+        NUMERIC date 
+        TEXT country 
+        TEXT state 
+        TEXT school
+        TEXT gender
+        TEXT email 
+        TEXT password 
+    }
+
+    temas{
+        INTEGER id_tema FK
+        TEXT titulo
+        TEXT descripcion
+        INTEGER id_preguntas FK
+   }
+
+
+    preguntas{
+        INTEGER id PK
+        TEXT opciones
+        TEXT pregunta
+        TEXT respuesta
+
+    }
+
+    progresos{
+        INTEGER id
+        INTEGER id_estudiante
+        INTEGER id_tema PK
+        TEXT bloqueo
+   }
